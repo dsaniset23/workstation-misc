@@ -1,0 +1,18 @@
+- name: download the K9s zip
+  get_url:
+    url: https://github.com/derailed/k9s/releases/download/{{ k9s_version }}/k9s_Linux_amd64.tar.gz
+    dest: /tmp/k9s_Linux_amd64.tar.gz
+    mode: '0755'
+
+- name: Unarchive a file that is already on the remote machine
+  ansible.builtin.unarchive:
+    src: /tmp/k9s_Linux_amd64.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+    owner: root
+    group: root
+    mode: '0755'
+    extra_opts:
+      - --wildcards
+      - k9s
+

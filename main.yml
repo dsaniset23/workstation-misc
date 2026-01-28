@@ -1,0 +1,7 @@
+- name: workstation roles
+  become: yes
+  host: localhost
+  connection: local
+
+  roles:
+    - "{{ application }}"
