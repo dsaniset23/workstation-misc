@@ -4,4 +4,5 @@
   connection: local
 
   roles:
-    - "{{ application }}"
+    - { role: terraform, tags:['terraform'] }
+    - { role: k9s, tags:['k9s'] }
