@@ -4,5 +4,5 @@
   connection: local
 
   roles:
-    - { role: terraform, tags:['terraform'] }
-    - { role: k9s, tags:['k9s'] }
+    - { role: terraform, tags: ['terraform'] }
+    - { role: k9s, tags: ['k9s'] }
